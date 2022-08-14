@@ -1,1 +1,0 @@
-from data_preparation.parse_sql.stat import stat_after_split
