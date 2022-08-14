@@ -1,6 +1,8 @@
+import pathlib
 import sqlite3
 import pandas as pd
 from src.data_preparation import stat_after_split
+import os
 
 
 def split_test_train():
@@ -43,8 +45,10 @@ def create_data(test_s_ids, valid_s_ids, train_s_ids):
 
 
 if __name__ == "__main__":
-    new_100_selected_loans = pd.read_excel("../../data/new_balance_dict.xlsx")["واژه"]
-    con = sqlite3.Connection("../../data/loan_dataset.sqlite")
+    # new_100_selected_loans = pd.read_excel("../../../data/new_balance_dict.xlsx")["واژه"]
+    print(os.getcwd())
+    new_100_selected_loans = pd.read_excel("/home/fatemeh/PycharmProjects/BertBased_LoanWordNMT/data/new_balance_dict.xlsx")["واژه"]
+    con = sqlite3.Connection("/home/fatemeh/PycharmProjects/BertBased_LoanWordNMT/data/loan_dataset.sqlite")
     c = con.cursor()
     df_data = pd.DataFrame(c.execute(
         """
