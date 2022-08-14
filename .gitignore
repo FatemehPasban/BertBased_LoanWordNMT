@@ -1,1 +1,4 @@
 venv
+data/loan_dataset.sqlite
+data/new_balance_dict.xlsx
+assets/
